@@ -1,0 +1,11 @@
+.example-container {
+  height: 100vh;
+}
+
+.drawer-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 0.5rem;
+}
+
