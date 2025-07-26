@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import {RouterLink, RouterOutlet} from '@angular/router';
-import { Apod } from './features/apod/apod';
+import { ApodComponent } from './features/apod/apod.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import {MatMenu, MatMenuItem, MatMenuTrigger} from '@angular/material/menu';
+
 import {MatButton} from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Apod, MatSidenavModule, MatMenu, MatMenuTrigger, MatButton, MatMenuItem, RouterLink],
+  imports: [ApodComponent, RouterOutlet, MatSidenavModule, MatButton,  RouterLink],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

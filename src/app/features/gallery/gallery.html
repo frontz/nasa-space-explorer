@@ -1,1 +1,18 @@
-<p>gallery works!</p>
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Type your query</mat-label>
+    <input matInput placeholder="mars" value="mars" [(ngModel)]="query" name="name">
+  </mat-form-field>
+
+  <div class="example-button-row" style="display: inline-block">
+    <button matButton="filled" (click)="getImages()">Search</button>
+  </div>
+
+  @if (items.length != 0) {
+    @for(item of items; track item) {
+      <p>{{ item.title }}</p>
+    }
+  } @else {
+    <p>No data...</p>
+  }
+</form>

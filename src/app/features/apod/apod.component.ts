@@ -1,13 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {NasaApi} from '../../core/services/nasa-api';
-import {MatCard} from '@angular/material/card';
 import { Apod } from '../../core/models/apod.model';
 
 @Component({
   selector: 'app-apod',
-  imports: [
-    MatCard
-  ],
+  imports: [],
   templateUrl: './apod.component.html',
   styleUrl: './apod.component.css'
 })
