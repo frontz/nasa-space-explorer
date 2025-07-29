@@ -15,6 +15,7 @@ import {
 } from '@angular/material/card';
 import {MatGridList, MatGridTile} from '@angular/material/grid-list';
 import {DatePipe} from '@angular/common';
+import {TruncatePipe} from '../../shared/truncate-pipe';
 
 @Component({
   selector: 'app-gallery',
@@ -36,6 +37,7 @@ import {DatePipe} from '@angular/common';
     MatGridList,
     MatGridTile,
     DatePipe,
+    TruncatePipe,
   ],
   templateUrl: './gallery.html',
   styleUrl: './gallery.css'
