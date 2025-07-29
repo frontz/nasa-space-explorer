@@ -1,18 +1,37 @@
-<form class="example-form">
+<!-- Form do wyszukiwania -->
+<div class="gallery">
+  <form class="example-form">
   <mat-form-field class="example-full-width">
     <mat-label>Type your query</mat-label>
     <input matInput placeholder="mars" value="mars" [(ngModel)]="query" name="name">
   </mat-form-field>
 
   <div class="example-button-row" style="display: inline-block">
-    <button matButton="filled" (click)="getImages()">Search</button>
+    <button mat-raised-button color="primary" (click)="getImages()">Search</button>
   </div>
+  </form>
+</div>
 
-  @if (items.length != 0) {
-    @for(item of items; track item) {
-      <p>{{ item.title }}</p>
-    }
-  } @else {
-    <p>No data...</p>
-  }
-</form>
+
+<!-- Galeria -->
+@if (items.length > 0) {
+  <div class="gallery">
+    @for (item of items; track item) {
+      <mat-card class="gallery-card" appearance="outlined">
+        <mat-card-header>
+          <mat-card-title>{{ item.title }}</mat-card-title>
+          <mat-card-subtitle>{{ item.dateCreated | date:'short' }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="item.imageUrl" alt="{{ item.title }}">
+        <mat-card-content>
+          <p>{{ item.description }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="primary">Details</button>
+        </mat-card-actions>
+      </mat-card>}
+  </div>
+} @else {
+  <p>No data...</p>
+}
+

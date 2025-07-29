@@ -1,0 +1,32 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.gallery-card {
+  flex: 1 1 calc(33.333% - 20px); /* Trzy kolumny */
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+mat-card-image {
+  object-fit: cover;
+  max-height: 200px;
+}
+
+/* Responsywność */
+@media (max-width: 900px) {
+  .gallery-card {
+    flex: 1 1 calc(50% - 20px); /* Dwie kolumny */
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-card {
+    flex: 1 1 100%; /* Jedna kolumna */
+  }
+}

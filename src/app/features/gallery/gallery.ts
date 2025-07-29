@@ -5,6 +5,16 @@ import {MatButton} from '@angular/material/button';
 import {FormsModule} from '@angular/forms';
 import {GalleryItem} from '../../core/models/gallery-item';
 import {Observable} from 'rxjs';
+import {
+  MatCard, MatCardActions,
+  MatCardContent,
+  MatCardHeader,
+  MatCardImage,
+  MatCardSubtitle,
+  MatCardTitle
+} from '@angular/material/card';
+import {MatGridList, MatGridTile} from '@angular/material/grid-list';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-gallery',
@@ -16,6 +26,16 @@ import {Observable} from 'rxjs';
     MatLabel,
     MatButton,
     FormsModule,
+    MatCard,
+    MatCardHeader,
+    MatCardTitle,
+    MatCardSubtitle,
+    MatCardContent,
+    MatCardImage,
+    MatCardActions,
+    MatGridList,
+    MatGridTile,
+    DatePipe,
   ],
   templateUrl: './gallery.html',
   styleUrl: './gallery.css'
