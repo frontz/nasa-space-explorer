@@ -1,0 +1,14 @@
+.details-card {
+  margin: 2rem auto;
+}
+
+mat-card img {
+  max-height: 600px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+mat-card-title, mat-card-subtitle, mat-card-content {
+  padding: 0 16px;
+  text-align: center;
+}

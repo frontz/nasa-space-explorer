@@ -4,7 +4,6 @@ import {MatFormField, MatInput, MatLabel} from '@angular/material/input';
 import {MatButton} from '@angular/material/button';
 import {FormsModule} from '@angular/forms';
 import {GalleryItem} from '../../core/models/gallery-item';
-import {Observable} from 'rxjs';
 import {
   MatCard, MatCardActions,
   MatCardContent,
@@ -13,9 +12,9 @@ import {
   MatCardSubtitle,
   MatCardTitle
 } from '@angular/material/card';
-import {MatGridList, MatGridTile} from '@angular/material/grid-list';
 import {DatePipe} from '@angular/common';
 import {TruncatePipe} from '../../shared/truncate-pipe';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-gallery',
@@ -34,10 +33,9 @@ import {TruncatePipe} from '../../shared/truncate-pipe';
     MatCardContent,
     MatCardImage,
     MatCardActions,
-    MatGridList,
-    MatGridTile,
     DatePipe,
     TruncatePipe,
+    RouterLink,
   ],
   templateUrl: './gallery.html',
   styleUrl: './gallery.css'

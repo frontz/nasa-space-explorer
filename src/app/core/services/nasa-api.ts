@@ -24,6 +24,7 @@ export class NasaApi {
     .pipe(
       map(response =>
         response.collection.items.map((item: any) => ({
+          nasa_id: item.data[0].nasa_id,
           title: item.data[0].title,
           description: item.data[0].description,
           dateCreated: item.data[0].date_created,
@@ -31,6 +32,21 @@ export class NasaApi {
         }))
       )
     );
+  }
+
+  getImageDetails(id: string | null): Observable<any> {
+    return this.http.get<any>(`https://images-api.nasa.gov/search?nasa_id=${id}`)
+      .pipe(
+        map(response => {
+          const item = response.collection.items[0];
+          return {
+            title: item.data[0].title,
+            description: item.data[0].description,
+            dateCreated: item.data[0].date_created,
+            imageUrl: item.links?.[0]?.href || ''
+          };
+        })
+      );
   }
 
 }

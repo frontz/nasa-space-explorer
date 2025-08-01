@@ -1,0 +1,11 @@
+@if (item) {
+  <mat-card class="details-card">
+    <img mat-card-image [src]="item?.imageUrl" alt="{{ item?.title }}">
+    <mat-card-title>{{ item?.title }}</mat-card-title>
+    <mat-card-subtitle>{{ item.dateCreated | date:'short' }}</mat-card-subtitle>
+    <mat-card-content>
+        <p>{{ item?.description }}</p>
+    </mat-card-content>
+  </mat-card>
+}
+
