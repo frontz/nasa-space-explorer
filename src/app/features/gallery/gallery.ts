@@ -15,6 +15,7 @@ import {
 import {DatePipe} from '@angular/common';
 import {TruncatePipe} from '../../shared/truncate-pipe';
 import {RouterLink} from '@angular/router';
+import {MatPaginator, PageEvent} from '@angular/material/paginator';
 
 @Component({
   selector: 'app-gallery',
@@ -36,6 +37,7 @@ import {RouterLink} from '@angular/router';
     DatePipe,
     TruncatePipe,
     RouterLink,
+    MatPaginator,
   ],
   templateUrl: './gallery.html',
   styleUrl: './gallery.css'
@@ -44,14 +46,31 @@ export class Gallery {
 
   query: string = '';
   items: GalleryItem[] = [];
+  pagedItems: GalleryItem[] = [];
+  pageSize = 12;
+  pageIndex = 0;
 
   constructor(private nasaApi: NasaApi) {}
 
   getImages() {
     this.nasaApi.getGallery(this.query).subscribe(data => {
       this.items = data;
+      this.pageIndex = 0;
+      this.updatePagedItems();
       console.log(this.items);
     })
+  }
+
+  updatePagedItems() {
+    const start = this.pageIndex * this.pageSize;
+    const end = start + this.pageSize;
+    this.pagedItems = this.items.slice(start, end);
+  }
+
+  onPageChange(event: PageEvent) {
+    this.pageIndex = event.pageIndex;
+    this.pageSize = event.pageSize;
+    this.updatePagedItems();
   }
 
 }
