@@ -7,10 +7,19 @@
 }
 
 .gallery-card {
-  flex: 1 1 calc(33.333% - 20px); /* Trzy kolumny */
+  flex: 1 1 calc(33.333% - 20px);
   max-width: 400px;
   display: flex;
   flex-direction: column;
+  background-color: #1a1a1a !important; /* Dark card background */
+  color: #ffffff;
+  border: 1px solid #333333;
+}
+
+.gallery-card:hover {
+  border-color: #505050;
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
 }
 
 mat-card-image {
@@ -18,15 +27,43 @@ mat-card-image {
   max-height: 200px;
 }
 
-/* Responsywność */
+/* Make sure form elements match the theme */
+.example-form mat-form-field {
+  color: #ffffff;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Style the input */
+::ng-deep .mat-mdc-form-field-focus-overlay {
+  background-color: #333333;
+}
+
+::ng-deep .mat-mdc-card {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+}
+
+::ng-deep .mat-mdc-card-subtitle {
+  color: #cccccc !important;
+}
+
+/* Paginator styling */
+::ng-deep .mat-mdc-paginator {
+  background-color: transparent !important;
+  color: #ffffff !important;
+}
+
+/* Responsive design */
 @media (max-width: 900px) {
   .gallery-card {
-    flex: 1 1 calc(50% - 20px); /* Dwie kolumny */
+    flex: 1 1 calc(50% - 20px);
   }
 }
 
 @media (max-width: 600px) {
   .gallery-card {
-    flex: 1 1 100%; /* Jedna kolumna */
+    flex: 1 1 100%;
   }
 }
+
