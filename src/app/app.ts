@@ -3,6 +3,7 @@ import {MatDrawer, MatDrawerContainer, MatDrawerContent} from '@angular/material
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { MatButton } from '@angular/material/button';
 import {SpaceBackgroundComponent} from './shared/background-component/background-component';
+import {Footer} from './shared/footer/footer';
 
 
 @Component({
@@ -16,6 +17,7 @@ import {SpaceBackgroundComponent} from './shared/background-component/background
     RouterLink,
     SpaceBackgroundComponent,
     MatDrawerContent,
+    Footer,
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
