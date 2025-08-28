@@ -4,6 +4,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { MatButton } from '@angular/material/button';
 import {SpaceBackgroundComponent} from './shared/background-component/background-component';
 import {Footer} from './shared/footer/footer';
+import {Copyright} from './shared/copyright';
 
 
 @Component({
@@ -18,6 +19,7 @@ import {Footer} from './shared/footer/footer';
     SpaceBackgroundComponent,
     MatDrawerContent,
     Footer,
+    Copyright,
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
