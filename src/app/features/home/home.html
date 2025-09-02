@@ -1,1 +1,28 @@
-<p>home works!</p>
+<div class="home-container">
+  <mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title class="mat-display-small">
+        🌌 Welcome to NASA Space Explorer
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="mat-body-large">
+      <p>
+        Embark on a journey through the universe with <strong>NASA Space Explorer</strong> —
+        your interactive gateway to the cosmos.
+      </p>
+      <p>
+        Discover breathtaking images from NASA’s vast archives, explore fascinating details about
+        celestial objects, and dive deeper into the wonders of space.
+      </p>
+      <p>
+        Whether you’re searching for distant galaxies, iconic missions, or the beauty of our own
+        solar system, NASA Space Explorer brings the stars closer to you.
+      </p>
+      <p>
+        Start your exploration today and let curiosity guide your path among the stars. 🚀
+      </p>
+        <h3> A photo of the day: {{ apod?.title }} </h3>
+        <img src="{{ apod?.url }}">
+    </mat-card-content>
+  </mat-card>
+</div>

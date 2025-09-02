@@ -1,6 +1,14 @@
 @use '@angular/material' as mat;
+@include mat.typography-hierarchy();
 
-/* Existing styles... */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: #000;
+  color: #fff;
+}
 
 /* Create the starry background */
 body::before {
