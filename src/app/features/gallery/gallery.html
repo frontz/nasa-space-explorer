@@ -1,0 +1,49 @@
+<!-- Form do wyszukiwania -->
+<div class="gallery">
+  <form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Type your query</mat-label>
+    <input matInput placeholder="mars" value="mars" [(ngModel)]="query" name="name">
+  </mat-form-field>
+
+  <div class="example-button-row" style="display: inline-block">
+    <button mat-raised-button color="primary" (click)="getImages()">Search</button>
+  </div>
+  </form>
+</div>
+
+
+<!-- Galeria -->
+@if (items.length > 0) {
+  <div class="gallery">
+    @for (item of pagedItems; track item) {
+      <mat-card class="gallery-card" appearance="outlined">
+        <mat-card-header>
+          <mat-card-title>{{ item.title }}</mat-card-title>
+          <mat-card-subtitle>{{ item.dateCreated | date:'short' }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="item.imageUrl" alt="{{ item.title }}">
+        <mat-card-content>
+          <p>{{ item.description | truncate: 70 }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="primary" [routerLink]="['/details', item.nasa_id]">Details</button>
+        </mat-card-actions>
+      </mat-card>
+    }
+
+  </div>
+
+  <div class="gallery">
+    <mat-paginator
+      [length]="items.length"
+      [pageSize]="12"
+      [pageSizeOptions]="[12]"
+      (page)="onPageChange($event)">
+    </mat-paginator>
+  </div>
+
+} @else {
+  <p>No data...</p>
+}
+
